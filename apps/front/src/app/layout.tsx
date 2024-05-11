@@ -2,8 +2,6 @@ import "~/styles/globals.css";
 
 import { GeistSans } from "geist/font/sans";
 
-import { TRPCReactProvider } from "~/trpc/react";
-
 export const metadata = {
   title: "NextJS",
   description: "sandbox",
@@ -18,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${GeistSans.variable}`}>
       <body>
-        <TRPCReactProvider>{children}</TRPCReactProvider>
+        {children}
       </body>
     </html>
   );
