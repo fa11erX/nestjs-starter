@@ -6,12 +6,12 @@ import { PrismaService } from 'src/database/prisma.service';
 export class TodosRepository {
   constructor(private prisma: PrismaService) {}
 
-  async createTweet(params: { data: Prisma.TodoCreateInput }): Promise<Todo> {
+  async createTodo(params: { data: Prisma.TodoCreateInput }): Promise<Todo> {
     const { data } = params;
     return this.prisma.todo.create({ data });
   }
 
-  async getTweets(params: {
+  async getTodos(params: {
     skip?: number;
     take?: number;
     cursor?: Prisma.TodoWhereUniqueInput;
@@ -22,7 +22,7 @@ export class TodosRepository {
     return this.prisma.todo.findMany({ skip, take, cursor, where, orderBy });
   }
 
-  async updateTweet(params: {
+  async updateTodo(params: {
     where: Prisma.TodoWhereUniqueInput;
     data: Prisma.TodoUpdateInput;
   }): Promise<Todo> {
@@ -30,7 +30,7 @@ export class TodosRepository {
     return this.prisma.todo.update({ where, data });
   }
 
-  async deleteTweet(params: {
+  async deleteTodo(params: {
     where: Prisma.TodoWhereUniqueInput;
   }): Promise<Todo> {
     const { where } = params;
