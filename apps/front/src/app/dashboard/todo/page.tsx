@@ -1,19 +1,20 @@
 async function getData() {
-  const res = await fetch('http://localhost:4000')
+  const res = await fetch('http://localhost:4000/api/todos')
   if (!res.ok) {
     throw new Error('Failed to fetch data')
   }
 
-  return 'api ok';
+  return res.json()
 }
 
 export default async function Post() {
   const data = await getData()
-  console.log(data)
+  const todoItems = data.map((todo: any) => <li>{todo.content}</li>);
+
   return (
     <div>
       <h1>My todoList</h1>
-      {data}
+      <ul>{todoItems}</ul>
     </div>
   );
 }
