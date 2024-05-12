@@ -12,7 +12,7 @@ export default async function Post() {
   console.log(data)
   return (
     <div>
-      <h1>Post API exemple</h1>
+      <h1>My todoList</h1>
       {data}
     </div>
   );

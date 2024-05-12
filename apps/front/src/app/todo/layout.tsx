@@ -1,5 +1,5 @@
-export default function PostLayout({
-    children, // will be a page or nested layout
+export default function TodoLayout({
+    children,
 }: {
     children: React.ReactNode
 }) {
