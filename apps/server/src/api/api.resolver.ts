@@ -7,12 +7,12 @@ export class ApiResolver {
   constructor(private readonly todosServices: TodosService) {}
 
   @Query(() => [Todo])
-  async getTweets() {
+  async getTodos() {
     return this.todosServices.getTodos();
   }
 
   @Mutation(() => Todo)
-  async createTweet(
+  async createTodo(
     @Args({ name: `content`, type: () => String }) content: string,
   ) {
     return this.todosServices.createTodo({ content });
