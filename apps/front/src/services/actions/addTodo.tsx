@@ -1,5 +1,7 @@
 'use server'
 
+import { revalidateTag } from "next/cache";
+
 export async function addTodo(content: string) {
     const requestOptions = {
         method: 'POST',
@@ -7,4 +9,6 @@ export async function addTodo(content: string) {
         body: JSON.stringify({ content: content })
     };
     await fetch('http://localhost:4000/api/todo', requestOptions)
+    revalidateTag('todo')
+
 }
