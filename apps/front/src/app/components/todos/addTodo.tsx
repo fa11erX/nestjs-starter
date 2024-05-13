@@ -6,6 +6,7 @@ interface Props {
 }
 
 export const AddTodo: React.FC<Props> = ({onSubmit}) => {
+    
     return (
         <div>
             <div className="mt-2 flex rounded-md shadow-sm">
