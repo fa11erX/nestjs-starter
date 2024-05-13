@@ -1,17 +1,9 @@
 import { AddTodo } from "~/app/components/todos/addTodo";
 import { TodoList } from "~/app/components/todos/todoList";
-
-async function getData() {
-  const res = await fetch('http://localhost:4000/api/todos')
-  if (!res.ok) {
-    throw new Error('Failed to fetch data')
-  }
-
-  return res.json()
-}
+import { getTodos } from "~/services/fetch/getTodos";
 
 export default async function Post() {
-  const data = await getData()
+  const data = await getTodos()
 
   return (
     <div>
