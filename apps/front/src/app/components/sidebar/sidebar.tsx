@@ -5,7 +5,7 @@ import {
 import Link from 'next/link'
 
 const navigation = [
-    { name: 'Home', href: '/dashboard', icon: HomeIcon, count: '5', current: true },
+    { name: 'Dashboard', href: '/dashboard', icon: HomeIcon, current: true },
     { name: 'Todo', href: '/dashboard/todo', icon: FolderIcon, current: false },
 ]
 
@@ -38,14 +38,6 @@ export default function Sidebar() {
                                     >
                                         <item.icon className="h-6 w-6 shrink-0" aria-hidden="true" />
                                         {item.name}
-                                        {item.count ? (
-                                            <span
-                                                className="ml-auto w-9 min-w-max whitespace-nowrap rounded-full bg-gray-900 px-2.5 py-0.5 text-center text-xs font-medium leading-5 text-white ring-1 ring-inset ring-gray-700"
-                                                aria-hidden="true"
-                                            >
-                                                {item.count}
-                                            </span>
-                                        ) : null}
                                     </Link>
                                 </li>
                             ))}

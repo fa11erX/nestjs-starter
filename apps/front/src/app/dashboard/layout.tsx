@@ -10,7 +10,7 @@ export default function DashboardLayout({
             <div className="basis-1/5">
                 <Sidebar />
             </div>
-            <div className="basis-4/5">
+            <div className="basis-4/5 p-8">
                 {children}
             </div>
         </main>
