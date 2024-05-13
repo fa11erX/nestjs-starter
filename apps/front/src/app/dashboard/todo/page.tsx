@@ -1,3 +1,6 @@
+import { AddTodo } from "~/app/components/todos/addTodo";
+import { TodoList } from "~/app/components/todos/todoList";
+
 async function getData() {
   const res = await fetch('http://localhost:4000/api/todos')
   if (!res.ok) {
@@ -9,12 +12,12 @@ async function getData() {
 
 export default async function Post() {
   const data = await getData()
-  const todoItems = data.map((todo: any) => <li>{todo.content}</li>);
 
   return (
     <div>
-      <h1>My todoList</h1>
-      <ul>{todoItems}</ul>
+      <h1 className="mb-3 text-xl font-bold">Todo</h1>
+      <AddTodo />
+      <TodoList todos={data} />
     </div>
   );
 }
